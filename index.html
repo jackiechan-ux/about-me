@@ -152,7 +152,6 @@
   .np-play { width: 32px; height: 32px; border-radius: 999px; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; background: hsl(var(--primary-foreground)); color: hsl(var(--primary)); font-size: 12px; padding-left: 2px; transition: transform .2s var(--ease-out-expo); }
   .np-play:hover { transform: scale(1.06); }
 
-  .c-online .handle { font-size: 14px; font-weight: 500; line-height: 1.3; }
 
   /* ---- clock ---- */
   .c-time .card { width: max-content; white-space: nowrap; padding: 18px; }
@@ -179,16 +178,6 @@
   .c-interests .card { max-width: 250px; padding: 16px 20px; }
   .tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag { padding: 4px 10px; border-radius: 999px; border: 1px solid hsl(var(--border)); font-size: 11px; color: hsl(var(--muted-foreground)); }
-
-  /* ---- find me online (blue) ---- */
-  .c-online .card {
-    max-width: 200px; padding: 18px;
-    background: hsl(var(--accent)); color: hsl(var(--accent-foreground));
-    border-color: hsl(0 0% 100% / .25); box-shadow: var(--shadow-pop);
-  }
-  .c-online .label { color: hsl(var(--accent-foreground) / .65); }
-  .c-online .handle small { display: block; opacity: .7; font-size: 11px; font-weight: 400; }
-  .c-online .socials { display: flex; flex-direction: column; gap: 10px; }
 
   /* ---- duolingo screenshot card ---- */
   .c-duo .card { padding: 8px; width: 190px; }
@@ -237,8 +226,7 @@
   .c-time      { top: 41%;  left: 6%;   transform: rotate(-5deg); z-index: 6; }
   .c-reading   { top: 38%;  right: 9%;  transform: rotate(3deg);  z-index: 6; }
   .c-interests { bottom: 9%; left: 7%;  transform: rotate(5deg);  z-index: 6; }
-  .c-online    { bottom: 8%; right: 11%; transform: rotate(-7deg); z-index: 7; }
-  .c-learning  { top: 57%;  left: 6%;   transform: rotate(8deg);  z-index: 6; }
+  .c-learning  { top: 55%;  left: 6%;   transform: rotate(8deg);  z-index: 6; }
   .c-work      { bottom: 9%; left: 39%; transform: rotate(-3deg); z-index: 5; }
   .c-duo       { bottom: 9%; left: 58%; transform: rotate(4deg);  z-index: 8; }
 
@@ -251,8 +239,7 @@
     .c-time      { top: 42%;  left: 3%;   }
     .c-reading   { top: 40%;  right: 6%;  }
     .c-interests { bottom: 8%; left: 5%;  }
-    .c-online    { bottom: 8%; right: 8%; }
-    .c-learning  { top: 60%;  left: 3%;   }
+    .c-learning  { top: 56%;  left: 3%;   }
     .c-work      { bottom: 9%; left: 40%; }
     .c-duo       { bottom: 9%; left: 56%; }
   }
@@ -274,7 +261,6 @@
     .c-interests { top: 76%; left: 5%;   }
     .c-work      { top: 89%; left: 20%;  }
     .c-duo       { top: 53%; right: 4%;  }
-    .c-online    { top: 95%; left: 6%;   }
   }
 
   /* ===================== THEME TOGGLE + CURSOR ===================== */
@@ -392,19 +378,6 @@
         <div class="tags">
           <span class="tag">LPGA &amp; PGA</span><span class="tag">New York Knicks</span><span class="tag">NY Mets</span>
           <span class="tag">Rating pizza spots</span><span class="tag">Coffee</span><span class="tag">Reading</span><span class="tag">Travel</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- FIND ME ONLINE -->
-    <div class="tile c-online" data-draggable>
-      <div class="card">
-        <p class="label">find me online</p>
-        <div class="socials">
-          <a class="row" href="https://github.com/jackiechan-ux" target="_blank" rel="noopener noreferrer">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.05.78 2.12v3.15c0 .31.21.67.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
-            <p class="handle">GitHub<small>@jackiechan-ux</small></p>
-          </a>
         </div>
       </div>
     </div>
@@ -561,4 +534,5 @@
 </script>
 </body>
 </html>
+
 

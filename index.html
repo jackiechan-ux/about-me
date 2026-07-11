@@ -27,21 +27,6 @@
     --font-sans: "Overused Grotesk", Inter, system-ui, sans-serif;
     --font-num: "Lilita One", "Overused Grotesk", system-ui, sans-serif;
   }
-  html[data-theme="dark"] {
-    --background: 0 0% 8%; --foreground: 0 0% 95%;
-    --card: 0 0% 12%; --card-foreground: 0 0% 95%;
-    --popover: 0 0% 12%; --popover-foreground: 0 0% 95%;
-    --primary: 0 0% 95%; --primary-foreground: 0 0% 10%;
-    --secondary: 0 0% 17%; --secondary-foreground: 0 0% 95%;
-    --muted: 0 0% 18%; --muted-foreground: 0 0% 62%;
-    --accent: 222 89% 62%; --accent-foreground: 0 0% 98%;
-    --highlight: 56 100% 60%; --highlight-foreground: 0 0% 8%;
-    --success: 163 50% 55%; --success-foreground: 160 71% 11%;
-    --border: 0 0% 24%; --input: 0 0% 24%; --ring: 222 89% 62%;
-    --shadow-card: 0 1px 2px hsl(0 0% 0% / .3), 0 8px 24px -8px hsl(0 0% 0% / .5);
-    --shadow-pop: 0 12px 40px -12px hsl(0 0% 0% / .7);
-  }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body {
     background: hsl(var(--background)); color: hsl(var(--foreground));
@@ -263,15 +248,7 @@
     .c-duo       { top: 53%; right: 4%;  }
   }
 
-  /* ===================== THEME TOGGLE + CURSOR ===================== */
-  .theme-toggle {
-    position: fixed; top: 18px; right: 18px; z-index: 700; width: 40px; height: 40px; border-radius: 999px;
-    border: 1px solid hsl(var(--border) / .8); background: hsl(var(--card) / .85); backdrop-filter: blur(12px);
-    color: hsl(var(--foreground)); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: var(--shadow-card);
-  }
-  .theme-toggle svg { width: 18px; height: 18px; }
-  html[data-theme="dark"] .theme-toggle .sun { display: block; } html[data-theme="dark"] .theme-toggle .moon { display: none; }
-  html[data-theme="light"] .theme-toggle .sun { display: none; } html[data-theme="light"] .theme-toggle .moon { display: block; }
+  /* ===================== CURSOR ===================== */
   .cursor-pill {
     position: fixed; top: 0; left: 0; z-index: 700; pointer-events: none; transform: translate(-50%, -50%) scale(.7); opacity: 0;
     background: hsl(var(--accent)); color: hsl(var(--accent-foreground)); border-radius: 999px; padding: 5px 14px;
@@ -298,11 +275,6 @@
 </style>
 </head>
 <body>
-
-<button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
-  <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-  <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-</button>
 
 <div class="cursor-pill" id="cursorPill">still exploring... &#10022;</div>
 
@@ -414,13 +386,6 @@
   "use strict";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var fine   = window.matchMedia("(pointer: fine)").matches;
-
-  /* Theme */
-  var root = document.documentElement;
-  root.setAttribute("data-theme", window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-  document.getElementById("themeToggle").addEventListener("click", function () {
-    root.setAttribute("data-theme", root.getAttribute("data-theme") === "dark" ? "light" : "dark");
-  });
 
   /* Clock (New York, DST aware) */
   var dEl = document.getElementById("clockDigits"), aEl = document.getElementById("clockAmPm"), tzEl = document.getElementById("clockTz");
@@ -534,5 +499,3 @@
 </script>
 </body>
 </html>
-
-
